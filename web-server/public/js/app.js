@@ -13,7 +13,7 @@ weatherForm.addEventListener('submit', (e)=>{
     e.preventDefault(); //to prevent page from loading
     const address =  search.value;  //value gives the value we entered into the form
     message1.textContent='Loading.....';
-    fetch('http://localhost:3000/weather?address='+address).then((response) =>{
+    fetch('/weather?address='+address).then((response) =>{
     response.json().then((data)=>{
         if(data.error){
             message1.textContent = data.error;
